@@ -2,78 +2,116 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Road Accident Dashboard | Sakshi Raorane</title>
+  <title>Power BI Dashboards | Sakshi Raorane</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-  * {
-    box-sizing: border-box;
-  }
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-  }
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+    }
 
-  .container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 1rem;
-  }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 1rem;
+    }
 
-  h1 {
-    text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: #333;
-  }
-
-  .iframe-wrapper {
-    width: 100%;
-    height: 85vh;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-  }
-
-  iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
-
-  @media (max-width: 768px) {
     h1 {
-      font-size: 1.5rem;
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .button-group {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .button-group button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #0078d4;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .button-group button:hover {
+      background-color: #005a9e;
     }
 
     .iframe-wrapper {
-      height: 75vh;
+      width: 100%;
+      height: 85vh;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
     }
-  }
 
-  @media (max-width: 480px) {
-    .iframe-wrapper {
-      height: 70vh;
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
     }
-  }
-</style>
 
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .iframe-wrapper {
+        height: 75vh;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .iframe-wrapper {
+        height: 70vh;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h1>UK Road Accident Dashboard (Power BI)</h1>
+    <h1>Power BI Dashboards by Sakshi Raorane</h1>
+
+    <div class="button-group">
+      <button onclick="loadDashboard(1)">Road Accident</button>
+      <button onclick="loadDashboard(2)">Restaurant Analysis</button>
+      <button onclick="loadDashboard(3)">Vehicle Sales</button>
+    </div>
+
     <div class="iframe-wrapper">
-      <iframe title="project"
-        src="https://app.powerbi.com/reportEmbed?reportId=251e08ba-732d-4e87-a049-6accad4ce27f&autoAuth=true&ctid=cca3f0fe-586f-4426-a8bd-b8146307e738"
-        allowfullscreen="true">
-      </iframe>
+      <iframe id="dashboardFrame" src="https://app.powerbi.com/reportEmbed?reportId=251e08ba-732d-4e87-a049-6accad4ce27f&autoAuth=true&ctid=cca3f0fe-586f-4426-a8bd-b8146307e738" allowfullscreen="true"></iframe>
     </div>
   </div>
-</body>
 
+  <script>
+    function loadDashboard(num) {
+      const iframe = document.getElementById('dashboardFrame');
+      let url = "";
+
+      if (num === 1) {
+        url = "https://app.powerbi.com/reportEmbed?reportId=251e08ba-732d-4e87-a049-6accad4ce27f&autoAuth=true&ctid=cca3f0fe-586f-4426-a8bd-b8146307e738"; // Road Accident
+      } else if (num === 2) {
+        url = "https://app.powerbi.com/reportEmbed?reportId=4fd48a8f-42b4-4c7e-be7c-8dfa673b01dd&autoAuth=true&ctid=cca3f0fe-586f-4426-a8bd-b8146307e738"; // Restaurant
+      } else if (num === 3) {
+        url = "https://app.powerbi.com/reportEmbed?reportId=62945c60-1ded-4b21-b03d-2886b7c24c3c&autoAuth=true&ctid=cca3f0fe-586f-4426-a8bd-b8146307e738"; // Vehicle Sales
+      }
+
+      iframe.src = url;
+    }
+  </script>
+</body>
 </html>
