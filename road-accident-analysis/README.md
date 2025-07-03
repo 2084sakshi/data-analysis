@@ -89,7 +89,5 @@ This project presents an interactive Power BI dashboard built to analyze and vis
 
 **Sakshi Raorane**  
 Final-year Engineering Student | Data & AI Enthusiast  
-[LinkedIn](https://www.linkedin.com/in/sakshiraorane/)  
-[Email](mailto:sakshiraorane.2005@gmail.com)
 
 
