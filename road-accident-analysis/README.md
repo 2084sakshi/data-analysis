@@ -1,6 +1,10 @@
+
 # 🚗 UK Road Accident Analysis Dashboard (Power BI)
 
 This project presents an interactive Power BI dashboard built to analyze and visualize road accident data across the United Kingdom. The aim is to identify accident-prone zones, trends by time and conditions, and high-risk vehicle types — helping inform road safety strategies and improve awareness.
+
+
+https://medium.com/@sakshiraorane.2005/%EF%B8%8F-uncovering-patterns-in-uk-road-accidents-using-power-bi-a-dashboard-story-2c2bbf256181
 
 ---
 
