@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Power BI Dashboards | Sakshi Raorane</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>Data Analytics Projects | Sakshi Raorane</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     * {
       box-sizing: border-box;
@@ -12,39 +12,73 @@
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
-      width: 100%;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f9f9f9;
+      color: #333;
     }
 
     .container {
       max-width: 1200px;
       margin: auto;
-      padding: 1rem;
+      padding: 1.5rem;
     }
 
     h1 {
       text-align: center;
-      font-size: 1.8rem;
+      font-size: 2rem;
+      margin-bottom: 0.2rem;
+      color: #0078d4;
+    }
+
+    p.subtitle {
+      text-align: center;
+      font-size: 1.1rem;
       margin-bottom: 1rem;
-      color: #333;
+      color: #666;
+    }
+
+    .bio {
+      text-align: center;
+      max-width: 800px;
+      margin: 1rem auto 2rem auto;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .resume-button {
+      display: block;
+      margin: 0 auto 2rem auto;
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .resume-button:hover {
+      background-color: #218838;
     }
 
     .button-group {
       text-align: center;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
 
     .button-group button {
       padding: 10px 20px;
       margin: 0 10px;
       border: none;
-      border-radius: 5px;
+      border-radius: 6px;
       background-color: #0078d4;
       color: white;
       font-size: 1rem;
       cursor: pointer;
+      transition: background-color 0.3s ease;
     }
 
     .button-group button:hover {
@@ -70,6 +104,12 @@
         font-size: 1.5rem;
       }
 
+      .button-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
       .iframe-wrapper {
         height: 75vh;
       }
@@ -82,18 +122,32 @@
     }
   </style>
 </head>
+
 <body>
   <div class="container">
-    <h1>Power BI Dashboards by Sakshi Raorane</h1>
+    <h1>Data Analytics Projects</h1>
+    <p class="subtitle">by Sakshi Raorane | Aspiring Data / BI Analyst</p>
+
+    <div class="bio">
+      I'm a final-year engineering student with a deep interest in uncovering insights from real-world data.  
+      I enjoy working with tools like Power BI, SQL, Excel, and Tableau to create interactive dashboards and  
+      data stories. My goal is to start my career as a <strong>Data Analyst or BI Analyst</strong>, using data  
+      to solve business problems and support smart decisions.
+    </div>
+
+    <a class="resume-button" href="resume_sakshi_raorane.pdf" download>📄 Download My Resume</a>
 
     <div class="button-group">
-      <button onclick="loadDashboard(1)">Road Accident</button>
-      <button onclick="loadDashboard(2)">Restaurant Analysis</button>
-      <button onclick="loadDashboard(3)">Vehicle Sales</button>
+      <button onclick="loadDashboard(1)">🛣️ Road Accident Analysis</button>
+      <button onclick="loadDashboard(2)">🍽️ Restaurant Sales Dashboard</button>
+      <button onclick="loadDashboard(3)">🚗 Vehicle Sales Insights</button>
     </div>
 
     <div class="iframe-wrapper">
-      <iframe id="dashboardFrame" src="https://app.powerbi.com/reportEmbed?reportId=251e08ba-732d-4e87-a049-6accad4ce27f&autoAuth=true&ctid=cca3f0fe-586f-4426-a8bd-b8146307e738" allowfullscreen="true"></iframe>
+      <iframe id="dashboardFrame"
+        src="https://app.powerbi.com/reportEmbed?reportId=251e08ba-732d-4e87-a049-6accad4ce27f&autoAuth=true&ctid=cca3f0fe-586f-4426-a8bd-b8146307e738"
+        allowfullscreen="true">
+      </iframe>
     </div>
   </div>
 
