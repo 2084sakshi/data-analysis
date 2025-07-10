@@ -67,11 +67,12 @@
     .button-group {
       text-align: center;
       margin-bottom: 1.5rem;
+      flex-wrap: wrap;
     }
 
     .button-group button {
       padding: 10px 20px;
-      margin: 0 10px;
+      margin: 0.5rem;
       border: none;
       border-radius: 6px;
       background-color: #0078d4;
@@ -85,18 +86,46 @@
       background-color: #005a9e;
     }
 
-    .iframe-wrapper {
+    .iframe-wrapper,
+    .capstone-wrapper {
       width: 100%;
       height: 85vh;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
       overflow: hidden;
+      display: none;
+      background-color: white;
+      padding: 1rem;
+      box-sizing: border-box;
     }
 
-    iframe {
+    .iframe-wrapper iframe {
       width: 100%;
       height: 100%;
       border: none;
+    }
+
+    .capstone-wrapper {
+      text-align: center;
+    }
+
+    .capstone-wrapper img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .capstone-links a {
+      display: inline-block;
+      margin: 0.5rem 1rem;
+      color: #0078d4;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .capstone-links a:hover {
+      text-decoration: underline;
     }
 
     @media (max-width: 768px) {
@@ -104,20 +133,15 @@
         font-size: 1.5rem;
       }
 
+      .iframe-wrapper,
+      .capstone-wrapper {
+        height: auto;
+      }
+
       .button-group {
         display: flex;
         flex-direction: column;
-        gap: 0.75rem;
-      }
-
-      .iframe-wrapper {
-        height: 75vh;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .iframe-wrapper {
-        height: 70vh;
+        align-items: center;
       }
     }
   </style>
@@ -141,30 +165,47 @@
       <button onclick="loadDashboard(1)">🛣️ Road Accident Analysis</button>
       <button onclick="loadDashboard(2)">🍽️ Restaurant Sales Dashboard</button>
       <button onclick="loadDashboard(3)">🚗 Vehicle Sales Insights</button>
+      <button onclick="showCapstone()">📦 Google Capstone Project</button>
     </div>
 
-    <div class="iframe-wrapper">
-      <iframe id="dashboardFrame"
-        src="https://app.powerbi.com/reportEmbed?reportId=251e08ba-732d-4e87-a049-6accad4ce27f&autoAuth=true&ctid=cca3f0fe-586f-4426-a8bd-b8146307e738"
-        allowfullscreen="true">
-      </iframe>
+    <div class="iframe-wrapper" id="iframeWrapper">
+      <iframe id="dashboardFrame" src=""></iframe>
+    </div>
+
+    <div class="capstone-wrapper" id="capstoneWrapper">
+      <img src="capstone_placeholder.jpg" alt="Google Capstone Project Screenshot" />
+      <div class="capstone-links">
+        <a href="https://github.com/2084sakshi/google-capstone-project" target="_blank">🔗 View GitHub Repo</a>
+        <a href="https://medium.com/@sakshiraorane" target="_blank">📝 Read Medium Article</a>
+      </div>
     </div>
   </div>
 
   <script>
     function loadDashboard(num) {
+      const iframeWrapper = document.getElementById('iframeWrapper');
+      const capstoneWrapper = document.getElementById('capstoneWrapper');
       const iframe = document.getElementById('dashboardFrame');
+
+      capstoneWrapper.style.display = 'none';
+      iframeWrapper.style.display = 'block';
+
       let url = "";
 
       if (num === 1) {
-        url = "https://app.powerbi.com/reportEmbed?reportId=251e08ba-732d-4e87-a049-6accad4ce27f&autoAuth=true&ctid=cca3f0fe-586f-4426-a8bd-b8146307e738"; // Road Accident
+        url = "https://app.powerbi.com/reportEmbed?reportId=251e08ba-732d-4e87-a049-6accad4ce27f&autoAuth=true&ctid=cca3f0fe-586f-4426-a8bd-b8146307e738";
       } else if (num === 2) {
-        url = "https://app.powerbi.com/reportEmbed?reportId=4fd48a8f-42b4-4c7e-be7c-8dfa673b01dd&autoAuth=true&ctid=cca3f0fe-586f-4426-a8bd-b8146307e738"; // Restaurant
+        url = "https://app.powerbi.com/reportEmbed?reportId=4fd48a8f-42b4-4c7e-be7c-8dfa673b01dd&autoAuth=true&ctid=cca3f0fe-586f-4426-a8bd-b8146307e738";
       } else if (num === 3) {
-        url = "https://app.powerbi.com/reportEmbed?reportId=62945c60-1ded-4b21-b03d-2886b7c24c3c&autoAuth=true&ctid=cca3f0fe-586f-4426-a8bd-b8146307e738"; // Vehicle Sales
+        url = "https://app.powerbi.com/reportEmbed?reportId=62945c60-1ded-4b21-b03d-2886b7c24c3c&autoAuth=true&ctid=cca3f0fe-586f-4426-a8bd-b8146307e738";
       }
 
       iframe.src = url;
+    }
+
+    function showCapstone() {
+      document.getElementById('iframeWrapper').style.display = 'none';
+      document.getElementById('capstoneWrapper').style.display = 'block';
     }
   </script>
 </body>
